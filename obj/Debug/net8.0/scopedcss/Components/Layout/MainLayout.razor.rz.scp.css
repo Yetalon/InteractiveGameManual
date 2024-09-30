@@ -1,18 +1,18 @@
-.page {
+.page[b-v5mdhrstky] {
     position: relative;
     display: flex;
     flex-direction: column;
 }
 
-main {
+main[b-v5mdhrstky] {
     flex: 1;
 }
 
-.sidebar {
+.sidebar[b-v5mdhrstky] {
     background-image: linear-gradient(180deg, rgb(5, 39, 103) 0%, #3a0647 70%);
 }
 
-.top-row {
+.top-row[b-v5mdhrstky] {
     background-color: #f7f7f7;
     border-bottom: 1px solid #d6d5d5;
     height: 3.5rem;
@@ -20,62 +20,62 @@ main {
     justify-content: space-between;
     align-items: center;
 }
-    .top-row ::deep a, .top-row ::deep .btn-link {
+    .top-row[b-v5mdhrstky]  a, .top-row[b-v5mdhrstky]  .btn-link {
         white-space: nowrap;
         margin-left: 1.5rem;
         text-decoration: none;
     }
 
-    .top-row ::deep a:hover, .top-row ::deep .btn-link:hover {
+    .top-row[b-v5mdhrstky]  a:hover, .top-row[b-v5mdhrstky]  .btn-link:hover {
         text-decoration: underline;
     }
 
-    .top-row ::deep a:first-child {
+    .top-row[b-v5mdhrstky]  a:first-child {
         overflow: hidden;
         text-overflow: ellipsis;
     }
 
 @media (max-width: 640.98px) {
-    .top-row {
+    .top-row[b-v5mdhrstky] {
         justify-content: space-between;
     }
 
-    .top-row ::deep a, .top-row ::deep .btn-link {
+    .top-row[b-v5mdhrstky]  a, .top-row[b-v5mdhrstky]  .btn-link {
         margin-left: 0;
     }
 }
 
 @media (min-width: 641px) {
-    .page {
+    .page[b-v5mdhrstky] {
         flex-direction: row;
     }
 
-    .sidebar {
+    .sidebar[b-v5mdhrstky] {
         width: 250px;
         height: 100vh;
         position: sticky;
         top: 0;
     }
 
-    .top-row {
+    .top-row[b-v5mdhrstky] {
         position: sticky;
         top: 0;
         z-index: 1;
     }
 
-    .top-row.auth ::deep a:first-child {
+    .top-row.auth[b-v5mdhrstky]  a:first-child {
         flex: 1;
         text-align: right;
         width: 0;
     }
 
-    .top-row, article {
+    .top-row[b-v5mdhrstky], article[b-v5mdhrstky] {
         padding-left: 2rem !important;
         padding-right: 1.5rem !important;
     }
 }
 
-#blazor-error-ui {
+#blazor-error-ui[b-v5mdhrstky] {
     background: lightyellow;
     bottom: 0;
     box-shadow: 0 -1px 2px rgba(0, 0, 0, 0.2);
@@ -87,7 +87,7 @@ main {
     z-index: 1000;
 }
 
-    #blazor-error-ui .dismiss {
+    #blazor-error-ui .dismiss[b-v5mdhrstky] {
         cursor: pointer;
         position: absolute;
         right: 0.75rem;

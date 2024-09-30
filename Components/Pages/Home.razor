@@ -1,7 +1,52 @@
 ﻿@page "/"
 
-<PageTitle>Home</PageTitle>
+<PageTitle>Maze Game</PageTitle>
 
-<h1>Hello, world!</h1>
+<div class="container">
+    <div class="row">
+        <h1 style="text-align: center;">Welcome to Maze Game By: Alex Davis</h1>
+        <div style="display: flex; justify-content: space-between; margin-top: 20px;">
+            <div style="flex: 1; padding: 10px; border: 1px solid #ccc;">
+                <h2 style="text-align: center;">How To win</h2>
+                <div style="justify-content: center; margin-top: 20px;">
+                    @if(!textWin){
+                        <button @onclick=DisplayTextWin style="padding: 10px 20px;">Click Me!</button>
+                    }
+                    else{
+                        <p style="margin-bottom: 20px;">To win the maze game you must adventure through the maze toward the exit marked E in a red box.
+                            You the player are marked P and in a green box. The items are marked W for weapon and o for
+                            Potions colored green and yellow respectively. There are monsters marked as a Red M to beat the
+                            monsters i recommend you find a weapon to increase your power.</p>
 
-Welcome to your new app.
+                            
+                        <img src="/Images/MazeGame.png" alt="Picture of Maze game" style="display: block;  margin: 20px auto;">
+                    }
+                </div>
+            </div>
+            <div style="flex: 1; padding: 10px; border: 1px solid #ccc;">
+                <h2 style="text-align: center;">Controls</h2>
+                <div style="justify-content: center; margin-top: 20px;">
+                    @if(!textControls){
+                        <button @onclick=DisplayTextControls style="padding: 10px 20px;">Click Me!</button>
+                    }
+                    else{
+                        <p>For controls user either wasd or the arrow keys for moving and when in battle user 1) to attack 2) to block and 3) to flee.</p>
+                    }
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+
+@code {
+    public bool textWin = false;
+    public bool textControls = false;
+    private void DisplayTextWin()
+    {
+        textWin = true;
+    }
+    private void DisplayTextControls()
+    {
+        textControls = true;
+    }
+}
