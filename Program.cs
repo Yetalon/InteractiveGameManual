@@ -1,5 +1,5 @@
 using InteractiveGameManual.Components;
-using InteractiveGameManual.Service;
+using InteractiveGameManual.Services;
 
 namespace InteractiveGameManual
 {
@@ -14,7 +14,10 @@ namespace InteractiveGameManual
             builder.Services.AddRazorComponents()
                 .AddInteractiveServerComponents();
 
-            builder.Services.AddScoped<ICharacter, Player>();
+            builder.Services.AddScoped<PlayerService>();
+            builder.Services.AddScoped<MonsterService>();
+            builder.Services.AddScoped<PotionService>();
+            builder.Services.AddScoped<WeaponService>();
 
             var app = builder.Build();
 

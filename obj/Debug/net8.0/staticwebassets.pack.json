@@ -5,6 +5,10 @@
       "PackagePath": "staticwebassets\\InteractiveGameManual.bundle.scp.css"
     },
     {
+      "Id": "C:\\Users\\Dukes\\projects\\2024Projects\\InteractiveGameManual\\wwwroot\\Images\\MazeGame.png",
+      "PackagePath": "staticwebassets\\Images\\MazeGame.png"
+    },
+    {
       "Id": "C:\\Users\\Dukes\\projects\\2024Projects\\InteractiveGameManual\\wwwroot\\app.css",
       "PackagePath": "staticwebassets\\app.css"
     },

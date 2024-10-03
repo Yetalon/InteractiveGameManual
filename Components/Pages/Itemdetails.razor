@@ -1,0 +1,39 @@
+@using InteractiveGameManual.Model;
+@using InteractiveGameManual.Services;
+@inject PotionService potions;
+@inject WeaponService weapons;
+
+@page "/itemdetails/{itemName}"
+
+@foreach(Potion potion in potions.AllItems){
+    if(potion.Name == itemName){
+        item = potion;
+    }
+}
+@foreach(Weapon weapon in weapons.AllItems){
+    if(weapon.Name == itemName){
+        item = weapon;
+    }
+}
+
+@if(item != null){
+    <h1>@item.Name</h1>
+    @if(item.ItemType == ItemTypes.Weapon){
+        weapon = (Weapon)item;
+        <p>weapon increases damage by @weapon.WeaponDamage</p>
+        <img src="@weapon.ImageURL">
+    }
+    else{
+        potion = (Potion)item;
+        <p>@potion.EffectDescription</p>
+        <img src="@potion.ImageURL">
+    }
+}
+
+@code{
+    [Parameter]
+    public string? itemName{get; set;}
+    public Item? item;
+    public Weapon? weapon;
+    public Potion? potion;
+}

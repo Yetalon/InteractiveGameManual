@@ -1,7 +1,23 @@
+@using InteractiveGameManual.Model;
+@using InteractiveGameManual.Services;
+@inject PotionService Potions;
+@inject WeaponService Weapons;
 @page "/items"
 
 <PageTitle>Items</PageTitle>
-
-<div>
-    
-</div>
+<h1>Potions</h1>
+<ul>
+    @foreach(var potion in Potions.AllItems){
+        <li>
+            <a href="/itemdetails/@potion.Name">@potion.Name</a>
+        </li>
+    }   
+</ul>
+<h1>Weapons</h1>
+<ul>
+    @foreach(var weapon in Weapons.AllItems){
+        <li>
+            <a href="/itemdetails/@weapon.Name">@weapon.Name</a>
+        </li>
+    }
+</ul>

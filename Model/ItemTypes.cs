@@ -2,7 +2,7 @@ namespace InteractiveGameManual.Model{
     /// <summary>
     /// enum used to represent the Type of an <see cref="Item"/>
     /// </summary>
-    public enum ItemType{
+    public enum ItemTypes{
         None,
         Weapon,
         Potion,
