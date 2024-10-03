@@ -31,11 +31,11 @@ else{
 
 @code{
     [Parameter]
-    public string noteName{get; set;}
+    public string? noteName{get; set;}
     
-    Note Note{get; set;}
-    public string title{get; set;}
-    public string text{get; set;}
+    Note? Note{get; set;}
+    public string? title{get; set;}
+    public string? text{get; set;}
     bool editNote = false;
     public void EditNote(){
         editNote = true;

@@ -27,7 +27,7 @@
 @code{
     string title {get; set;}
     string text {get; set;}
-    string noteTitle{get; set;}
+    string noteTitle {get; set;}
     public async Task MakeNote(){
         Note toAdd = new Note{
             Title = title,
@@ -40,7 +40,7 @@
     public async Task DeleteNote(){
         Note noteToDelete = new();
         foreach(var note in notes.AllNotes){
-            if(note.Title == noteTitle){
+            if(note.Title.Trim() == noteTitle.Trim()){
                 noteToDelete = note;
             }
         }
