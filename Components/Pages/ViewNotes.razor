@@ -1,0 +1,52 @@
+@using InteractiveGameManual.Model
+@using InteractiveGameManual.Services
+@inject NoteService Notes
+@page "/note/"
+@page "/note/{noteName}"
+
+@if(noteName == "" || noteName == null){
+    <p>invalid note please go back and try again</p>
+}
+else{
+    foreach(var note in Notes.AllNotes){
+        if(noteName == note.Title){
+            Note = note;
+            <h1>@note.Title</h1>
+            <p>@note.Text</p>
+        }
+    }
+    @if(!editNote){
+    <button @onclick=EditNote>EditNote</button>
+    }
+    else{
+        <input @bind=title required>
+        <br>
+        <input @bind=text>
+        <button @onclick=SaveChanges><a href="/note/@title" style="color: black; text-decoration: none;">SaveChanges</a></button>
+    }
+}
+
+<br>
+<a href="/notes">go back</a>
+
+@code{
+    [Parameter]
+    public string noteName{get; set;}
+    
+    Note Note{get; set;}
+    public string title{get; set;}
+    public string text{get; set;}
+    bool editNote = false;
+    public void EditNote(){
+        editNote = true;
+    }
+    public async Task SaveChanges(){
+        if(title != "" && title != null){
+            Note.Title = title;
+            Note.Text = text;
+            title = "";
+            text = "";
+            editNote = false;
+        }
+    }
+}

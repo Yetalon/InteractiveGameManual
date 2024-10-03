@@ -1,0 +1,50 @@
+@using InteractiveGameManual.Model
+@using InteractiveGameManual.Services
+@inject NoteService notes
+
+@page "/notes"
+<ul>
+    @foreach(var note in notes.AllNotes){
+        <li>
+            <a href="note/@note.Title">@note.Title</a>
+        </li>
+    }
+</ul>
+<h1>Create Note</h1>
+<div>
+    Title: <input @bind=title><br>
+    <br>
+    Text: <input @bind=text><br>
+    <br>
+    <button @onclick=MakeNote>Make Note</button>
+</div>
+<h1>Delete Note</h1>
+<div>
+    Title: <input @bind=noteTitle><br>
+    <br>
+    <button @onclick=DeleteNote>DeleteNote</button>
+</div>
+@code{
+    string title {get; set;}
+    string text {get; set;}
+    string noteTitle{get; set;}
+    public async Task MakeNote(){
+        Note toAdd = new Note{
+            Title = title,
+            Text = text
+        };
+        notes.CreateNote(toAdd);
+        title = "";
+        text = "";
+    }
+    public async Task DeleteNote(){
+        Note noteToDelete = new();
+        foreach(var note in notes.AllNotes){
+            if(note.Title == noteTitle){
+                noteToDelete = note;
+            }
+        }
+        notes.DeleteNote(noteToDelete);
+        noteTitle = "";
+    }
+}

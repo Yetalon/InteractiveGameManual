@@ -18,6 +18,7 @@ namespace InteractiveGameManual
             builder.Services.AddScoped<MonsterService>();
             builder.Services.AddScoped<PotionService>();
             builder.Services.AddScoped<WeaponService>();
+            builder.Services.AddScoped<NoteService>();
 
             var app = builder.Build();
 
