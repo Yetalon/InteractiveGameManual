@@ -22,7 +22,8 @@ namespace InteractiveGameManual.Services{
                 Health = 20,
                 Power = 5,
                 ImageURL = "https://files.oaiusercontent.com/file-k3fyrNnYNnvSYVtRB4LiEcM6?se=2024-10-03T13%3A33%3A36Z&sp=r&sv=2024-08-04&sr=b&rscc=max-age%3D604800%2C%20immutable%2C%20private&rscd=attachment%3B%20filename%3D1e873c2b-7c28-4608-a8e9-4fed54544955.webp&sig=B5Xr7w4w4kmuUFb5WjTiKXO5OC%2BF/8%2BP5WZsz4mrN/o%3D",
-                Name = "Player"
+                Name = "Player",
+                Description = "The player is a maze adventure whose one goal is to escape. The player starts with 20 health and 5 power; however, they can increase their power by finding weapons throughout the maze. The player must be careful, though. With only 20 max health, running into two damage potions could be a run-ender. There are many obstacles the player will run into during their adventure, and they must be fearful of what secrets lie in the maze."
             });
             PlayerInventory = new();
         }

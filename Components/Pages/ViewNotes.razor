@@ -14,15 +14,20 @@ else{
             <h1>@note.Title</h1>
             <p>@note.Text</p>
         }
+        else{
+            <p>invalid note please go back and try again</p>
+        }
     }
     @if(!editNote){
     <button @onclick=EditNote>EditNote</button>
     }
     else{
-        <input @bind=title required>
-        <br>
-        <input @bind=text>
-        <button @onclick=SaveChanges><a href="/note/@title" style="color: black; text-decoration: none;">SaveChanges</a></button>
+        <div>
+            Edit Title: <input @bind=title>
+            <br>
+            Edit Text: <input @bind=text>
+            <button @onclick=SaveChanges><a href="/note/@title" style="color: black; text-decoration: none;">SaveChanges</a></button>
+        </div>
     }
 }
 
@@ -44,6 +49,11 @@ else{
         if(title != "" && title != null){
             Note.Title = title;
             Note.Text = text;
+            title = "";
+            text = "";
+            editNote = false;
+        }
+        else{
             title = "";
             text = "";
             editNote = false;

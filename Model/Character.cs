@@ -17,5 +17,9 @@ namespace InteractiveGameManual.Model{
         /// Name of character
         /// </summary>
         public string? Name{get; set;}
+        /// <summary>
+        /// Description of character
+        /// </summary>
+        public string? Description{get; set;}
     }
 }

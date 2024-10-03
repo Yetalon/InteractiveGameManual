@@ -10,6 +10,5 @@ namespace InteractiveGameManual.Model{
         DamagePotion,
         PosionPotion,
         EmptyPotion,
-
     }
 }

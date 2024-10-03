@@ -66,19 +66,19 @@ namespace InteractiveGameManual.Services{
             {
                 case ItemTypes.HealingPotion:
                     potion.EffectAmount = 20;
-                    potion.EffectDescription = $"You heal for {potion.EffectAmount}";
+                    potion.EffectDescription = $"heals the player for {potion.EffectAmount} hp";
                     break;
                 case ItemTypes.DamagePotion:
                     potion.EffectAmount = 10;
-                    potion.EffectDescription = $"You take {potion.EffectAmount} damage";
+                    potion.EffectDescription = $"deals {potion.EffectAmount} damage to the player";
                     break;
                 case ItemTypes.PosionPotion:
                     potion.EffectAmount = 3;
-                    potion.EffectDescription = $"You have been posioned you take {potion.EffectAmount} damage for the next 3 turns";
+                    potion.EffectDescription = $"Posions the player causing {potion.EffectAmount} damage for the next 3 turns";
                     break;
                 case ItemTypes.EmptyPotion:
                     potion.EffectAmount = 0;
-                    potion.EffectDescription = $"how useless";
+                    potion.EffectDescription = $"a very very useless item";
                     break;
                 default:
                     potion.EffectAmount = 0;
@@ -92,22 +92,36 @@ namespace InteractiveGameManual.Services{
                 potion.ItemType = type;
                 PotionEffect(potion);
                 potion.Name = GenerateName(potion);
-                potion.ImageURL = PotionImage(potion);
+                (potion.ImageURL, potion.Description) = PotionImage(potion);
                 AllItems.Add(potion);
             } 
         }
-        public string PotionImage(Potion potion){
+        public (string, string) PotionImage(Potion potion){
+            string imageURL = "";
+            string description = "";
             switch(potion.ItemType){
                 case ItemTypes.PosionPotion:
-                    return "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcR2Gpvt8ggwGqhqwngf1zWgcFsEK9D1e3GTcOg0RsLbEZt-oyM&s";
+                    //https://clipart-library.com/search1/?q=posion+potion#gsc.tab=1&gsc.q=poison%20potion
+                    imageURL = "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcR2Gpvt8ggwGqhqwngf1zWgcFsEK9D1e3GTcOg0RsLbEZt-oyM&s";
+                    description ="The posion potion is quite the concotion damaging you over time. Running into one of can be a slow death. However, if you are lucky you may just run into a healing potion next to save your life.";
+                    return (imageURL, description);
                 case ItemTypes.DamagePotion:
-                    return "https://clipart-library.com/2023/potion-bottle-clipart.png";
+                    //https://clipart-library.com/search1/?q=potion#gsc.tab=1&gsc.q=potion&gsc.page=1
+                    imageURL = "https://clipart-library.com/2023/potion-bottle-clipart.png";
+                    description =$"The damage potion is a truly scary potion with it dealing the most damage ({potion.EffectAmount} damage). You do not want to run into two of these at once player as it will end your run.";
+                    return (imageURL, description);
                 case ItemTypes.HealingPotion:
-                    return "https://clipart-library.com/new_gallery/127-1270121_formao-do-neo-illustration.png";
+                    //https://clipart-library.com/search1/?q=potion#gsc.tab=1&gsc.q=potion&gsc.page=1
+                    imageURL = "https://clipart-library.com/new_gallery/127-1270121_formao-do-neo-illustration.png";
+                    description ="The healing potion is the one potion you will be hoping for the most. This potion will save your life many of time. One can only hope that every potion in the maze is a healing potion.";
+                    return (imageURL, description);
                 case ItemTypes.EmptyPotion:
-                    return "https://clipart-library.com/img1/422959.png";
+                    //https://clipart-library.com/search1/?q=empty+potion#gsc.tab=1&gsc.q=empty%20potion&gsc.page=1
+                    imageURL = "https://clipart-library.com/img1/422959.png";
+                    description ="It's just a empty potion nothing more nothing less. While it may be the most useless potion in the game, you may be more happy to see it than anything else.";
+                    return (imageURL, description);
                 default:
-                    return "https://developers.elementor.com/docs/assets/img/elementor-placeholder-image.png";
+                    return (imageURL, description);
             }
         }
         /// <summary>
