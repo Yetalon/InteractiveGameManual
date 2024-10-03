@@ -21,7 +21,7 @@ namespace InteractiveGameManual.Services{
             AllCharacters.Add(new Character{
                 Health = 20,
                 Power = 5,
-                ImageURL = "https://developers.elementor.com/docs/assets/img/elementor-placeholder-image.png",
+                ImageURL = "https://files.oaiusercontent.com/file-k3fyrNnYNnvSYVtRB4LiEcM6?se=2024-10-03T13%3A33%3A36Z&sp=r&sv=2024-08-04&sr=b&rscc=max-age%3D604800%2C%20immutable%2C%20private&rscd=attachment%3B%20filename%3D1e873c2b-7c28-4608-a8e9-4fed54544955.webp&sig=B5Xr7w4w4kmuUFb5WjTiKXO5OC%2BF/8%2BP5WZsz4mrN/o%3D",
                 Name = "Player"
             });
             PlayerInventory = new();

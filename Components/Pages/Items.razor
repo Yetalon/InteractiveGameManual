@@ -5,7 +5,11 @@
 @page "/items"
 
 <PageTitle>Items</PageTitle>
-<h1>Potions</h1>
+<h1>
+    Potions
+    <!-- Taken from opensource openclipart at https://openclipart.org/detail/194632/potions -->
+    <img src="https://openclipart.org/image/800px/194632" style="width: 60px; height: auto;">
+</h1>
 <ul>
     @foreach(var potion in Potions.AllItems){
         <li>
@@ -13,7 +17,11 @@
         </li>
     }   
 </ul>
-<h1>Weapons</h1>
+<h1>
+    Weapons
+    <!--Taken from opensource openclipart at https://openclipart.org/detail/3058/crossed-swords-->
+    <img src="https://openclipart.org/image/800px/3058" style="Width: 60px; height: auto;">
+</h1>
 <ul>
     @foreach(var weapon in Weapons.AllItems){
         <li>

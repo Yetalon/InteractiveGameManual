@@ -92,9 +92,23 @@ namespace InteractiveGameManual.Services{
                 potion.ItemType = type;
                 PotionEffect(potion);
                 potion.Name = GenerateName(potion);
-                potion.ImageURL = "https://developers.elementor.com/docs/assets/img/elementor-placeholder-image.png";
+                potion.ImageURL = PotionImage(potion);
                 AllItems.Add(potion);
             } 
+        }
+        public string PotionImage(Potion potion){
+            switch(potion.ItemType){
+                case ItemTypes.PosionPotion:
+                    return "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcR2Gpvt8ggwGqhqwngf1zWgcFsEK9D1e3GTcOg0RsLbEZt-oyM&s";
+                case ItemTypes.DamagePotion:
+                    return "https://clipart-library.com/2023/potion-bottle-clipart.png";
+                case ItemTypes.HealingPotion:
+                    return "https://clipart-library.com/new_gallery/127-1270121_formao-do-neo-illustration.png";
+                case ItemTypes.EmptyPotion:
+                    return "https://clipart-library.com/img1/422959.png";
+                default:
+                    return "https://developers.elementor.com/docs/assets/img/elementor-placeholder-image.png";
+            }
         }
         /// <summary>
         /// creates a formmated string

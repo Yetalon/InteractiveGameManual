@@ -41,9 +41,30 @@ namespace InteractiveGameManual.Services{
                 weapon.ItemType = ItemTypes.Weapon;
                 weapon.Name = GenerateName(weapon);
                 weapon.WeaponDamage = Rnd.Next(1,11);
-                weapon.ImageURL = "https://developers.elementor.com/docs/assets/img/elementor-placeholder-image.png";
+                weapon.ImageURL = GenerateImage(weapon);
                 AllItems.Add(weapon);
             }
+        }
+
+        public string GenerateImage(Weapon weapon){
+            string? name = weapon.Name;
+            int spaceIndex = name.IndexOf(" ");
+            name = name.Substring(spaceIndex + 1);
+            switch(name){
+                case "Sword":
+                    //take from opensource openclipart at https://openclipart.org/detail/8291/simple-sword
+                    return "https://openclipart.org/image/800px/8291";
+                case "Axe":
+                    //taken from opensource openclipart at https://openclipart.org/detail/17286/battle-axe-medieval
+                    return "https://openclipart.org/image/800px/17286";
+                case "Dagger":
+                    //taken from opensource openclipart at https://openclipart.org/detail/170455/circassian-dagger
+                    return "https://openclipart.org/image/800px/170455";
+                case "Spear":
+                    //taken from opensource openclipart at https://openclipart.org/detail/249163/spear-2
+                    return "https://openclipart.org/image/800px/249163";
+            }
+            return "https://developers.elementor.com/docs/assets/img/elementor-placeholder-image.png";
         }
         /// <summary>
         /// Creates a formatted string for the weapon
