@@ -5,19 +5,25 @@
 @inject MonsterService Monster;
 
 <PageTitle>Characters</PageTitle>
-<h1>Player</h1>
-<ul>
-    @foreach(Character player in Player.AllCharacters){
-        <li>
-            <a href="/characterdetails/@player.Name">@player.Name</a>
-        </li>
-    }
-</ul>
-<h1>Monster</h1>
-<ul>
-    @foreach(Character monster in Monster.AllCharacters){
-        <li>
-            <a href="/characterdetails/@monster.Name">@monster.Name</a>
-        </li>
-    }
-</ul>
+<div class="row">
+    <div class="col-md-6 border border-black">
+        <h1 class="text-center">Player</h1>
+        <ul class="list-unstyled text-center">
+            @foreach(Character player in Player.AllCharacters){
+                <li>
+                    <a href="/details/@player.Name">@player.Name</a>
+                </li>
+            }
+        </ul>
+    </div>
+    <div class="col-md-6 border border-black">
+        <h1 class="d-flex justify-content-center">Monster</h1>
+        <ul class="list-unstyled text-center">
+            @foreach(Character monster in Monster.AllCharacters){
+                <li>
+                    <a class="d-flex justify-content-center" href="/details/@monster.Name">@monster.Name</a>
+                </li>
+            }
+        </ul>
+    </div>
+</div>

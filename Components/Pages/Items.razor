@@ -5,27 +5,29 @@
 @page "/items"
 
 <PageTitle>Items</PageTitle>
-<h1>
-    Potions
-    <!-- Taken from opensource openclipart at https://openclipart.org/detail/194632/potions -->
-    <img src="https://openclipart.org/image/800px/194632" style="width: 60px; height: auto;">
-</h1>
-<ul>
-    @foreach(var potion in Potions.AllItems){
-        <li>
-            <a href="/itemdetails/@potion.Name">@potion.Name</a>
-        </li>
-    }   
-</ul>
-<h1>
-    Weapons
-    <!--Taken from opensource openclipart at https://openclipart.org/detail/3058/crossed-swords-->
-    <img src="https://openclipart.org/image/800px/3058" style="Width: 60px; height: auto;">
-</h1>
-<ul>
-    @foreach(var weapon in Weapons.AllItems){
-        <li>
-            <a href="/itemdetails/@weapon.Name">@weapon.Name</a>
-        </li>
-    }
-</ul>
+<div>
+    <h1>
+        Potions
+        <!-- Taken from opensource openclipart at https://openclipart.org/detail/194632/potions -->
+        <img src="https://openclipart.org/image/800px/194632" style="width: 60px; height: auto;">
+    </h1>
+    <ul>
+        @foreach(var potion in Potions.AllItems){
+            <li>
+                <a href="/details/@potion.Name">@potion.Name</a>
+            </li>
+        }   
+    </ul>
+    <h1>
+        Weapons
+        <!--Taken from opensource openclipart at https://openclipart.org/detail/3058/crossed-swords-->
+        <img src="https://openclipart.org/image/800px/3058" style="Width: 60px; height: auto;">
+    </h1>
+    <ul>
+        @foreach(var weapon in Weapons.AllItems){
+            <li>
+                <a href="/details/@weapon.Name">@weapon.Name</a>
+            </li>
+        }
+    </ul>
+</div>

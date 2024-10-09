@@ -20,7 +20,7 @@ namespace InteractiveGameManual.Services{
             AllCharacters.Add(new Character{
                 Health = Rnd.Next(6,11),
                 Power = Rnd.Next(2,6),
-                ImageURL = "https://files.oaiusercontent.com/file-LyNvpvcbxkbkfy0H3UamE56q?se=2024-10-03T17%3A06%3A57Z&sp=r&sv=2024-08-04&sr=b&rscc=max-age%3D604800%2C%20immutable%2C%20private&rscd=attachment%3B%20filename%3Dcfb957f4-b24a-47eb-91df-d8a49bb905c0.webp&sig=a9Hewxvusk53jmq1YKqzaQcKcFYekzimEkY%2BcA0hRzE%3D",
+                ImageURL = "https://raw.githubusercontent.com/Yetalon/Images/refs/heads/main/DALL%C2%B7E%202024-10-03%2009.30.00%20-%20A%20cartoony%20monster%20character%20for%20a%20maze%20game%2C%20designed%20in%20a%20playful%20and%20colorful%20style.%20The%20monster%20has%20a%20round%20body%20with%20exaggerated%20features%2C%20large%20.webp",
                 Name = "Monster",
                 Description = "The Monster is a dangerous beast that the player will encounter when trying to complete the Maze. The Monsters Health and Power are randomly generated, making each Monster unique and every battle unpredictable. A player may want to find a weapon before fighting a Monster."
             });

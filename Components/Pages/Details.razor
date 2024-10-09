@@ -1,0 +1,71 @@
+@using InteractiveGameManual.Model;
+@using InteractiveGameManual.Services;
+@page "/details/{Name}"
+@inject PlayerService player;
+@inject MonsterService monster;
+@inject PotionService potions;
+@inject WeaponService weapons;
+
+@if(Name == "Player" || Name == "Monster"){
+    <PageTitle>@character?.Name</PageTitle>
+    <div class="row">
+        @for(int i = 0; i < player.AllCharacters.Count; i++){
+            if(player.AllCharacters[i].Name == Name){
+                character = player.AllCharacters[i];
+            }
+        }
+        @for(int i = 0; i < monster.AllCharacters.Count; i++){
+            if(monster.AllCharacters[i].Name == Name){
+                character = monster.AllCharacters[i];
+            }
+        }
+        <div class="col-md-12">
+            <h1>@character?.Name</h1>
+            <p>Health is @character?.Health <br> power is @character?.Power</p>
+            <br>
+            <p>@character?.Description</p>
+            <img class="img-fluid" src="@character?.ImageURL">
+        </div>
+    </div>
+}
+else{
+    <PageTitle>@item?.Name</PageTitle>
+    <div class="row">
+    @foreach(Potion potion in potions.AllItems){
+        if(potion.Name == Name){
+            item = potion;
+        }
+    }
+    @foreach(Weapon weapon in weapons.AllItems){
+        if(weapon.Name == Name){
+            item = weapon;
+        }
+    }
+    <div class="col-md-6">
+        @if(item != null){
+            <h1>@item.Name</h1>
+            @if(item.ItemType == ItemTypes.Weapon){
+                weapon = (Weapon)item;
+                <p>weapon increases damage by @weapon.WeaponDamage</p>
+                <p>(all weapon damage is rolled between a 1 to 10)</p>
+                <p>@weapon.Description</p>
+                <img class="img-fluid" src="@weapon.ImageURL">
+            }
+            else{
+                potion = (Potion)item;
+                <p>@potion.EffectDescription</p>
+                <p>@potion.Description</p>
+                <img class="img-fluid" src="@potion.ImageURL">
+            }
+        }
+    </div>
+</div>
+}
+@code {
+    [Parameter]
+    public string? Name{get; set;}
+    Character? character{get; set;}
+    public Item? item;
+    public Weapon? weapon;
+    public Potion? potion;
+}

@@ -17,7 +17,8 @@ namespace InteractiveGameManual.Services{
         Random Rnd { get; set; }
         /// <summary>
         /// Initalizes a instance of <see cref="potion"/> class
-        /// Initalizes the list to have all the potion types, randomly picks a type, generates the name, sets the effect amount
+        /// Initalizes the list to have all the potion types and a list of all potions and then calls <see cref="CreateAllPotions"/> 
+        /// Initalizes a instance of Random
         /// </summary>
         public PotionService()
         {
@@ -41,7 +42,7 @@ namespace InteractiveGameManual.Services{
         /// <returns>returns the potion name</returns>
         public override string GenerateName(Item potion)
         {
-            List<string> potionNames = new() { "Healing", "Damage", "Empty", "Poision" };
+            List<string> potionNames = new() { "Healing Potion", "Damage Potion", "Empty Potion", "Poision Potion" };
             switch (potion.ItemType)
             {
                 case ItemTypes.HealingPotion:
@@ -86,17 +87,25 @@ namespace InteractiveGameManual.Services{
                     break;
             }
         }
+        /// <summary>
+        /// creates a instance of every potion
+        /// </summary>
         public void CreateAllPotions(){
             foreach(var type in PotionTypes){
                 Potion potion = new();
                 potion.ItemType = type;
                 PotionEffect(potion);
                 potion.Name = GenerateName(potion);
-                (potion.ImageURL, potion.Description) = PotionImage(potion);
+                (potion.ImageURL, potion.Description) = PotionImageandDescription(potion);
                 AllItems.Add(potion);
             } 
         }
-        public (string, string) PotionImage(Potion potion){
+        /// <summary>
+        /// Matches the potion type to its image and description
+        /// </summary>
+        /// <param name="potion">instance of the potion to get its type</param>
+        /// <returns>the imageURL and description of that potion type</returns>
+        public (string, string) PotionImageandDescription(Potion potion){
             string imageURL = "";
             string description = "";
             switch(potion.ItemType){

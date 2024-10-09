@@ -22,20 +22,16 @@ build_property._RazorSourceGeneratorDebug =
 build_metadata.AdditionalFiles.TargetPath = Q29tcG9uZW50c1xBcHAucmF6b3I=
 build_metadata.AdditionalFiles.CssScope = 
 
-[C:/Users/Dukes/projects/2024Projects/InteractiveGameManual/Components/Pages/CharacterDetails.razor]
-build_metadata.AdditionalFiles.TargetPath = Q29tcG9uZW50c1xQYWdlc1xDaGFyYWN0ZXJEZXRhaWxzLnJhem9y
-build_metadata.AdditionalFiles.CssScope = 
-
 [C:/Users/Dukes/projects/2024Projects/InteractiveGameManual/Components/Pages/Characters.razor]
 build_metadata.AdditionalFiles.TargetPath = Q29tcG9uZW50c1xQYWdlc1xDaGFyYWN0ZXJzLnJhem9y
 build_metadata.AdditionalFiles.CssScope = 
 
-[C:/Users/Dukes/projects/2024Projects/InteractiveGameManual/Components/Pages/Error.razor]
-build_metadata.AdditionalFiles.TargetPath = Q29tcG9uZW50c1xQYWdlc1xFcnJvci5yYXpvcg==
+[C:/Users/Dukes/projects/2024Projects/InteractiveGameManual/Components/Pages/Details.razor]
+build_metadata.AdditionalFiles.TargetPath = Q29tcG9uZW50c1xQYWdlc1xEZXRhaWxzLnJhem9y
 build_metadata.AdditionalFiles.CssScope = 
 
-[C:/Users/Dukes/projects/2024Projects/InteractiveGameManual/Components/Pages/Itemdetails.razor]
-build_metadata.AdditionalFiles.TargetPath = Q29tcG9uZW50c1xQYWdlc1xJdGVtZGV0YWlscy5yYXpvcg==
+[C:/Users/Dukes/projects/2024Projects/InteractiveGameManual/Components/Pages/Error.razor]
+build_metadata.AdditionalFiles.TargetPath = Q29tcG9uZW50c1xQYWdlc1xFcnJvci5yYXpvcg==
 build_metadata.AdditionalFiles.CssScope = 
 
 [C:/Users/Dukes/projects/2024Projects/InteractiveGameManual/Components/Pages/Items.razor]
