@@ -20,7 +20,9 @@ namespace InteractiveGameManual.Services{
         public bool IsPoisioned { get; set; }
 
         /// <summary>
-        /// Sets players health to 20, power to 5, and creates the inventory
+        /// Creates a instance of <see cref="AllCharacters"/>
+        /// Adds a Player to the AllCharacters 
+        /// Creates a instance of <see cref="PlayerInventory"/>
         /// </summary>
         public PlayerService(){
             AllCharacters = [];

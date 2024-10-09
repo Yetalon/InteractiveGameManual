@@ -61,7 +61,7 @@ namespace InteractiveGameManual.Services{
         /// sets the effect amount and description based on the potion type
         /// </summary>
         /// <param name="type">the type of potion</param>
-        public void PotionEffect(Potion potion)
+        public void PotionEffectAndDescription(Potion potion)
         {
             switch (potion.ItemType)
             {
@@ -94,7 +94,7 @@ namespace InteractiveGameManual.Services{
             foreach(var type in PotionTypes){
                 Potion potion = new();
                 potion.ItemType = type;
-                PotionEffect(potion);
+                PotionEffectAndDescription(potion);
                 potion.Name = GenerateName(potion);
                 (potion.ImageURL, potion.Description) = PotionImageandDescription(potion);
                 AllItems.Add(potion);

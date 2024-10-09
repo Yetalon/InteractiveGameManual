@@ -4,6 +4,9 @@ namespace InteractiveGameManual.Services{
     /// inherits the <see cref="ICharacter"/> and implements it and rolls random amont of health and power
     /// </summary>
     public class MonsterService : ICharacter{
+        /// <summary>
+        /// A list of all monsterCharacters
+        /// </summary>
         public List<Character> AllCharacters {get; set;}
         /// <summary>
         /// Random number generator for monsters stats
@@ -11,7 +14,8 @@ namespace InteractiveGameManual.Services{
         Random Rnd { get; set; }
 
         /// <summary>
-        /// randomly generates the health and power of the monster
+        /// creates a instance of AllCharacters and then populates it with a monster.
+        /// There is only one Monster in my maze but the health and power of the monster does change
         /// </summary>
         public MonsterService()
         {

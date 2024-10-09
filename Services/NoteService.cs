@@ -2,7 +2,7 @@ using InteractiveGameManual.Model;
 namespace InteractiveGameManual.Services{
     public class NoteService{
         /// <summary>
-        /// Holds instances of all the notes created
+        /// Holds all the notes created
         /// </summary>
         public List<Note> AllNotes {get; set;}
         /// <summary>
@@ -10,7 +10,7 @@ namespace InteractiveGameManual.Services{
         /// </summary>
         public List<string> AllRefrences {get; set;}
         /// <summary>
-        /// 
+        /// Creates a instance of <see cref="AllNotes"/> and a instance of <see cref="AllRefrences"/>
         /// </summary>
         public NoteService(){
             AllNotes = new();
@@ -30,6 +30,13 @@ namespace InteractiveGameManual.Services{
         public void DeleteNote(Note note){
             AllNotes.Remove(note);
         }
+        /// <summary>
+        /// Populates <see cref="AllRefrences"/> with every possible refrence to a character or item
+        /// </summary>
+        /// <param name="Player">All the players</param>
+        /// <param name="Monster">All the monster</param>
+        /// <param name="Weapons">all the weapons</param>
+        /// <param name="Potions">All the potions</param>
         public void InitalizeAllRefrences(PlayerService Player, MonsterService Monster, WeaponService Weapons, PotionService Potions){
             if(AllRefrences.Count >= 11){
                 return;

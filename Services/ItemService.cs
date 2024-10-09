@@ -5,9 +5,12 @@ namespace InteractiveGameManual.Services{
     /// provides a abstract method <see cref="GenerateName"/> and a formmatted string method <see cref="ToString"/>
     /// </summary>
     public abstract class ItemService{
+        /// <summary>
+        /// A list of all the items <see cref="Item"/>
+        /// </summary>
         public List<Item> AllItems{get; set;}
         /// <summary>
-        /// Initalizes a instance of <see cref="Item"/> generates a random name and sets the Type to none
+        /// Initalizes a instance AllItems
         /// </summary>
         public ItemService(){
             AllItems = new();
