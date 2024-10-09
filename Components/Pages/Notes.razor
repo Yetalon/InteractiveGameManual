@@ -8,93 +8,100 @@
 
 @page "/notes"
 
-<div>
-    <ul>
-        @foreach(var note in notes.AllNotes){
-            <li>
-                <a href="note/@note.Title">@note.Title</a>
-                <ul>
-                    @if(note.Refrences != null && note.Refrences.Count > 0){
-                        foreach(var refrence in note.Refrences){
-                            <li>
-                                <a href="/details/@refrence">@refrence</a>
-                            </li>
+<div class="row">
+    <div class="col-md-12">
+        <ul>
+            @foreach (var note in notes.AllNotes){
+                <li>
+                    <a href="note/@note.Title">@note.Title</a>
+                    <ul>
+                        @if (note.Refrences != null && note.Refrences.Count > 0){
+                            foreach (var refrence in note.Refrences){
+                                <li>
+                                    <a href="/details/@refrence">@refrence</a>
+                                </li>
+                            }
                         }
-                    }
-                </ul>
-            </li>
-        }
-    </ul>
-    <div>
-        <h1>Create Note</h1>
-        Title: <input @bind=title><br>
-        <br>
-        Text: <input @bind=text><br>
-        <br>
-        <button @onclick=MakeNote>Make Note</button>
-    </div>
-    <br>
-    <div>
-        <h1>Add refrences</h1>
-        <label for="NoteForRefrence">Title of note to add refrence to:</label>
-        <select @bind=noteForRefrence name="NoteForRefrence" id="NoteForRefrence">
-            @foreach(var note in notes.AllNotes){
-                <option value="@note.Title">@note.Title</option>
+                    </ul>
+                </li>
             }
-        </select>
+        </ul>
+        <div>
+            <h1>Create Note</h1>
+            Title: <input @bind=title><br>
+            <br>
+            Text: <input @bind=text><br>
+            <br>
+            <button @onclick=MakeNote>Make Note</button>
+        </div>
         <br>
-        <label for="Refrence">Choose a refrence to add to selected note:</label>
-        <select @bind=selectedRefrence name="Refrence" id="refrence">
-            @foreach(var refrence in notes.AllRefrences){
-                <option value="@refrence">@refrence</option>
-            }
-        </select>
+        <div>
+            <h1>Add refrences</h1>
+            <label for="NoteForRefrence">Title of note to add refrence to:</label>
+            <select @bind=noteForRefrence name="NoteForRefrence" id="NoteForRefrence">
+                @foreach (var note in notes.AllNotes){
+                    <option value="@note.Title">@note.Title</option>
+                }
+            </select>
+            <br>
+            <label for="Refrence">Choose a refrence to add to selected note:</label>
+            <select @bind=selectedRefrence name="Refrence" id="refrence">
+                @foreach (var refrence in notes.AllRefrences){
+                    <option value="@refrence">@refrence</option>
+                }
+            </select>
+            <br>
+            <button @onclick=AddRefrence>Add Refrence</button>
+        </div>
         <br>
-        <button @onclick=AddRefrence>Add Refrence</button>
+        <div>
+            <h1>Delete Note</h1>
+            <label for="NoteToDelete">Title of note to delete</label>
+            <select @bind=noteTitle name="NoteToDelete" id="NoteToDelete">
+                @foreach (var note in notes.AllNotes){
+                    <option value="@note.Title">@note.Title</option>
+                }
+            </select>
+            <br>
+            <button @onclick=DeleteNote>DeleteNote</button>
+        </div>
     </div>
-    <br>
-    <div>
-        <h1>Delete Note</h1>
-        <label for="NoteToDelete">Title of note to delete</label>
-        <select @bind=noteTitle name="NoteToDelete" id="NoteToDelete">
-            @foreach(var note in notes.AllNotes){
-                <option value="@note.Title">@note.Title</option>
-            }
-        </select>
-        <br>
-        <button @onclick=DeleteNote>DeleteNote</button>
-    </div>
+    using System.Xml;
 </div>
-@code{
-    string title {get; set;}
-    string text {get; set;}
-    string noteTitle {get; set;}
-    string noteForRefrence {get; set;}
-    string selectedRefrence {get; set;}
-    protected override void OnInitialized(){
-            notes.InitalizeAllRefrences(player, monster, weapons, potions);
+@code {
+    string? title {get; set;}
+    string? text {get; set;}
+    string? noteTitle {get; set;}
+    string? noteForRefrence {get; set;}
+    string? selectedRefrence {get; set;}
+    protected override void OnInitialized()
+    {
+        notes.InitalizeAllRefrences(player, monster, weapons, potions);
     }
     private async Task MakeNote(){
+        if(title == null || title == ""){
+            title = "default title";
+        }
         Note toAdd = new Note{
-            Title = title,
-            Text = text,
-            Refrences = new()
-        };
+                Title = title,
+                Text = text,
+                Refrences = new()
+            };
         notes.CreateNote(toAdd);
         title = "";
         text = "";
     }
     private async Task DeleteNote(){
-        if(notes.AllNotes == null || notes.AllNotes.Count == 0){
+        if (notes.AllNotes == null || notes.AllNotes.Count == 0){
             return;
         }
         Note noteToDelete = new();
-        if(noteTitle == null || noteTitle ==""){
+        if (noteTitle == null || noteTitle == ""){
             noteToDelete = notes.AllNotes[0];
         }
         else{
-            foreach(var note in notes.AllNotes){
-                if(note.Title.Trim() == noteTitle.Trim()){
+            foreach (var note in notes.AllNotes){
+                if (note?.Title?.Trim() == noteTitle.Trim()){
                     noteToDelete = note;
                     break;
                 }
@@ -103,16 +110,21 @@
         notes.DeleteNote(noteToDelete);
         noteTitle = "";
     }
-    private async Task AddRefrence(){
-        if(noteForRefrence == null || noteForRefrence == ""){
+    private async Task AddRefrence()
+    {
+        if(notes.AllNotes.Count == 0){
+            return;
+        }
+        if (noteForRefrence == null || noteForRefrence == ""){
             noteForRefrence = notes.AllNotes[0].Title;
         }
-        if(selectedRefrence == null || selectedRefrence == ""){
+        if (selectedRefrence == null || selectedRefrence == ""){
             selectedRefrence = "Player";
         }
-        foreach(var note in notes.AllNotes){
-            if(note.Title.Trim() == noteForRefrence){
-                note.Refrences.Add(selectedRefrence);
+        foreach (var note in notes.AllNotes){
+            if (note?.Title?.Trim() == noteForRefrence)
+            {
+                note?.Refrences?.Add(selectedRefrence);
             }
         }
     }

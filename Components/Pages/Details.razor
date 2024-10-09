@@ -24,7 +24,7 @@
             <p>Health is @character?.Health <br> power is @character?.Power</p>
             <br>
             <p>@character?.Description</p>
-            <img class="img-fluid" src="@character?.ImageURL">
+            <img class="img-fluid img-thumbnail w-50 h-auto bg-white" src="@character?.ImageURL">
         </div>
     </div>
 }
@@ -49,13 +49,13 @@ else{
                 <p>weapon increases damage by @weapon.WeaponDamage</p>
                 <p>(all weapon damage is rolled between a 1 to 10)</p>
                 <p>@weapon.Description</p>
-                <img class="img-fluid" src="@weapon.ImageURL">
+                <img class="img-fluid img-thumbnail w-25 h-auto bg-white" src="@weapon.ImageURL">
             }
             else{
                 potion = (Potion)item;
                 <p>@potion.EffectDescription</p>
                 <p>@potion.Description</p>
-                <img class="img-fluid" src="@potion.ImageURL">
+                <img class="img-fluid img-thumbnail w-25 h-auto bg-white" src="@potion.ImageURL">
             }
         }
     </div>

@@ -5,81 +5,85 @@
 @page "/note/{noteName}"
 
 <div>
-    @if(noteName == "" || noteName == null){
+    @if (noteName == "" || noteName == null){
         <p>invalid note please go back and try again</p>
     }
     else{
-        foreach(var note in Notes.AllNotes){
-            if(noteName == note.Title){
+        foreach (var note in Notes.AllNotes){
+            if (noteName == note.Title){
                 Note = note;
                 <h1>@note.Title</h1>
                 <p>@note.Text</p>
-                if(note.Refrences != null && note.Refrences.Count > 0){
-                    foreach(var refrence in note.Refrences){
+                if (note.Refrences != null && note.Refrences.Count > 0){
+                    foreach (var refrence in note.Refrences){
                         <li>
                             <a href="/details/@refrence">@refrence</a>
                         </li>
                     }
-                } 
+                }
             }
         }
         <br>
-        @if(!editNote){
-        <button @onclick=EditNote>EditNote</button>
-        }
-        else{
-            <div>
-                Edit Title: <input @bind=title>
-                <br>
-                Edit Text: <input @bind=text>
-                @if(title == null || title == ""){
-                    <button @onclick=SaveChanges><a href="/note/@Note.Title" style="color: black; text-decoration: none;">SaveChanges</a></button>
-                }
-                else{
-                    <button @onclick=SaveChanges><a href="/note/@title" style="color: black; text-decoration: none;">SaveChanges</a></button>
-                }
-            </div>
-        }
+        <div class="row">
+            @if (!editNote){
+                <div class="col-md-12">
+                    <button @onclick=EditNote>EditNote</button>
+                </div>
+            }
+            else{
+                <div class="col-md-12">
+                    Edit Title: <input @bind=title>
+                    <br>
+                    Edit Text: <input @bind=text>
+                    @if (title == null || title == ""){
+                        <button @onclick=SaveChanges><a href="/note/@Note.Title" style="color: black; text-decoration: none;">SaveChanges</a></button>
+                    }
+                    else{
+                        <button @onclick=SaveChanges><a href="/note/@title" style="color: black; text-decoration: none;">SaveChanges</a></button>
+                    }
+                </div>
+            }
+        </div>
         <br>
         <div>
-        @if (Note != null && Note.Refrences != null) {
-            <label for="Refrence">Choose a reference to delete from @Note.Title:</label>
-            <select @bind=selectedReference name="Refrence" id="refrence">
-                @foreach (var refrence in Note.Refrences) {
-                    <option value="@refrence">@refrence</option>
-                }
-            </select>
-            <br>
-            <button @onclick="DeleteRefrence">Delete Reference</button>
+            @if (Note != null && Note.Refrences != null){
+                <label for="Refrence">Choose a reference to delete from @Note.Title:</label>
+                <select @bind=selectedReference name="Refrence" id="refrence">
+                    @foreach (var refrence in Note.Refrences){
+                        <option value="@refrence">@refrence</option>
+                    }
+                </select>
+                <br>
+                <button @onclick="DeleteRefrence">Delete Reference</button>
             }
         </div>
     }
 
-    
+
     <br>
     <a href="/notes">go back</a>
 </div>
 
-@code{
+@code {
     [Parameter]
-    public string? noteName{get; set;}
-    
-    Note? Note{get; set;}
-    public string? title{get; set;}
-    public string? text{get; set;}
+    public string? noteName {get; set;}
+
+    Note? Note {get; set;}
+    public string? title {get; set;}
+    public string? text {get; set;}
     bool editNote = false;
-    public string selectedReference {get; set;}
+    public string? selectedReference {get; set;}
     public void EditNote(){
         editNote = true;
     }
     public async Task SaveChanges(){
-        if(title != "" && title != null){
+        if (title != "" && title != null){
             Note.Title = title;
             Note.Text = text;
         }
         else{
-            title = Note.Title;
-            if(text != "" && text != null){
+            title = Note?.Title;
+            if (text != "" && text != null){
                 Note.Text = text;
             }
         }
@@ -89,16 +93,17 @@
     }
     public async Task DeleteRefrence(){
         string referenceToDelete = selectedReference;
-        if(referenceToDelete != null && referenceToDelete != ""){
-            if(Note.Refrences.Count > 0){
+        if (referenceToDelete != null && referenceToDelete != ""){
+            if (Note?.Refrences?.Count > 0){
                 Note.Refrences.Remove(referenceToDelete);
             }
         }
         else{
-            if(Note.Refrences.Count > 0){
+            if (Note?.Refrences?.Count > 0){
                 referenceToDelete = Note.Refrences[0];
                 Note.Refrences.Remove(referenceToDelete);
             }
         }
+        selectedReference = "";
     }
 }

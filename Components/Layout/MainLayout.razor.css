@@ -13,6 +13,7 @@ main {
 }
 
 .top-row {
+    background-color: #212529;
     border-bottom: 1px solid #d6d5d5;
     height: 3.5rem;
     display: flex;

@@ -6,6 +6,9 @@ namespace InteractiveGameManual.Services{
     /// take damage from any source <see cref="AttackCharacter"/> <see cref="DamageTaken"/>
     /// </summary>
     public interface ICharacter{
+        /// <summary>
+        /// A list of all <see cref="Character"/>s
+        /// </summary>
         public List<Character> AllCharacters {get; set;}
         /// <summary>
         /// takens in a character(2) and subtracts the characters(2) health from the current characters power
