@@ -74,8 +74,8 @@ namespace InteractiveGameManual.Services{
                     Description = $"The {weapon.Name} is a lightweight and agile weapon. Whether you're retreating or running towards the monster it's great for quick maze navigation. The {weapon.Name} while small is stil a great weapon to pick up for slaying Monsters.";
                     return (ImageURL, Description);
                 case "Spear":
-                    //taken from opensource openclipart at https://openclipart.org/detail/249163/spear-2
-                    ImageURL = "https://openclipart.org/image/800px/249163";
+                    //ai generated https://chatgpt.com/g/g-pmuQfob8d-image-generator/c/6706e9a6-3610-8007-9d64-9002ebdd5c89
+                    ImageURL = "https://raw.githubusercontent.com/Yetalon/Images/refs/heads/main/InteractiveGameManual/DALL%C2%B7E%202024-10-09%2016.38.12%20-%20A%20detailed%20image%20of%20an%20ancient%20spear%2C%20featuring%20a%20sharp%2C%20pointed%20metal%20tip%20and%20a%20wooden%20shaft.%20The%20spear%20is%20designed%20in%20a%20rustic%20style%2C%20with%20slight%20we.webp";
                     Description = $"The {weapon.Name} is a long pointy stick that may just save your life. if you are looking for a weapon that keeps the monsters at bay, then look no further. With the {weapon.Name} you'll be able to slay monsters easier than ever.(some may never even touch you)";
                     return (ImageURL, Description);
             }

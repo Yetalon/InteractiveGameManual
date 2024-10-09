@@ -29,7 +29,7 @@ namespace InteractiveGameManual.Services{
             AllCharacters.Add(new Character{
                 Health = 20,
                 Power = 5,
-                ImageURL = "https://raw.githubusercontent.com/Yetalon/Images/refs/heads/main/1e873c2b-7c28-4608-a8e9-4fed54544955.webp",
+                ImageURL = "https://raw.githubusercontent.com/Yetalon/Images/refs/heads/main/InteractiveGameManual/1e873c2b-7c28-4608-a8e9-4fed54544955.webp",
                 Name = "Player",
                 Description = "The player is a maze adventure whose one goal is to escape. The player starts with 20 health and 5 power; however, they can increase their power by finding weapons throughout the maze. The player must be careful, though. With only 20 max health, running into two damage potions could be a run-ender. There are many obstacles the player will run into during their adventure, and they must be fearful of what secrets lie in the maze."
             });

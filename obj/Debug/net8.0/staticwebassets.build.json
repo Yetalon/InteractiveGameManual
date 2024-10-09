@@ -1,6 +1,6 @@
 {
   "Version": 1,
-  "Hash": "8yKp6dXXmCd0Mxxfte00N9p/T0Px/Nt6SvxyIh3sCmY=",
+  "Hash": "vdR3NW7JfFNed+QtjdJh6LFXEoV3V2E6Cq0gTJ8/vlg=",
   "Source": "InteractiveGameManual",
   "BasePath": "_content/InteractiveGameManual",
   "Mode": "Default",
@@ -10,17 +10,17 @@
     {
       "Name": "InteractiveGameManual\\wwwroot",
       "Source": "InteractiveGameManual",
-      "ContentRoot": "C:\\Users\\Dukef\\projects\\csci2\\InteractiveGameManual\\wwwroot\\",
+      "ContentRoot": "C:\\Users\\Dukes\\projects\\2024Projects\\InteractiveGameManual\\wwwroot\\",
       "BasePath": "_content/InteractiveGameManual",
       "Pattern": "**"
     }
   ],
   "Assets": [
     {
-      "Identity": "C:\\Users\\Dukef\\projects\\csci2\\InteractiveGameManual\\obj\\Debug\\net8.0\\scopedcss\\bundle\\InteractiveGameManual.styles.css",
+      "Identity": "C:\\Users\\Dukes\\projects\\2024Projects\\InteractiveGameManual\\obj\\Debug\\net8.0\\scopedcss\\bundle\\InteractiveGameManual.styles.css",
       "SourceId": "InteractiveGameManual",
       "SourceType": "Computed",
-      "ContentRoot": "C:\\Users\\Dukef\\projects\\csci2\\InteractiveGameManual\\obj\\Debug\\net8.0\\scopedcss\\bundle\\",
+      "ContentRoot": "C:\\Users\\Dukes\\projects\\2024Projects\\InteractiveGameManual\\obj\\Debug\\net8.0\\scopedcss\\bundle\\",
       "BasePath": "_content/InteractiveGameManual",
       "RelativePath": "InteractiveGameManual.styles.css",
       "AssetKind": "All",
@@ -33,13 +33,13 @@
       "AssetTraitValue": "ApplicationBundle",
       "CopyToOutputDirectory": "Never",
       "CopyToPublishDirectory": "PreserveNewest",
-      "OriginalItemSpec": "C:\\Users\\Dukef\\projects\\csci2\\InteractiveGameManual\\obj\\Debug\\net8.0\\scopedcss\\bundle\\InteractiveGameManual.styles.css"
+      "OriginalItemSpec": "C:\\Users\\Dukes\\projects\\2024Projects\\InteractiveGameManual\\obj\\Debug\\net8.0\\scopedcss\\bundle\\InteractiveGameManual.styles.css"
     },
     {
-      "Identity": "C:\\Users\\Dukef\\projects\\csci2\\InteractiveGameManual\\obj\\Debug\\net8.0\\scopedcss\\projectbundle\\InteractiveGameManual.bundle.scp.css",
+      "Identity": "C:\\Users\\Dukes\\projects\\2024Projects\\InteractiveGameManual\\obj\\Debug\\net8.0\\scopedcss\\projectbundle\\InteractiveGameManual.bundle.scp.css",
       "SourceId": "InteractiveGameManual",
       "SourceType": "Computed",
-      "ContentRoot": "C:\\Users\\Dukef\\projects\\csci2\\InteractiveGameManual\\obj\\Debug\\net8.0\\scopedcss\\projectbundle\\",
+      "ContentRoot": "C:\\Users\\Dukes\\projects\\2024Projects\\InteractiveGameManual\\obj\\Debug\\net8.0\\scopedcss\\projectbundle\\",
       "BasePath": "_content/InteractiveGameManual",
       "RelativePath": "InteractiveGameManual.bundle.scp.css",
       "AssetKind": "All",
@@ -52,13 +52,13 @@
       "AssetTraitValue": "ProjectBundle",
       "CopyToOutputDirectory": "Never",
       "CopyToPublishDirectory": "PreserveNewest",
-      "OriginalItemSpec": "C:\\Users\\Dukef\\projects\\csci2\\InteractiveGameManual\\obj\\Debug\\net8.0\\scopedcss\\projectbundle\\InteractiveGameManual.bundle.scp.css"
+      "OriginalItemSpec": "C:\\Users\\Dukes\\projects\\2024Projects\\InteractiveGameManual\\obj\\Debug\\net8.0\\scopedcss\\projectbundle\\InteractiveGameManual.bundle.scp.css"
     },
     {
-      "Identity": "C:\\Users\\Dukef\\projects\\csci2\\InteractiveGameManual\\wwwroot\\app.css",
+      "Identity": "C:\\Users\\Dukes\\projects\\2024Projects\\InteractiveGameManual\\wwwroot\\app.css",
       "SourceId": "InteractiveGameManual",
       "SourceType": "Discovered",
-      "ContentRoot": "C:\\Users\\Dukef\\projects\\csci2\\InteractiveGameManual\\wwwroot\\",
+      "ContentRoot": "C:\\Users\\Dukes\\projects\\2024Projects\\InteractiveGameManual\\wwwroot\\",
       "BasePath": "_content/InteractiveGameManual",
       "RelativePath": "app.css",
       "AssetKind": "All",
@@ -74,10 +74,10 @@
       "OriginalItemSpec": "wwwroot\\app.css"
     },
     {
-      "Identity": "C:\\Users\\Dukef\\projects\\csci2\\InteractiveGameManual\\wwwroot\\bootstrap\\bootstrap.min.css",
+      "Identity": "C:\\Users\\Dukes\\projects\\2024Projects\\InteractiveGameManual\\wwwroot\\bootstrap\\bootstrap.min.css",
       "SourceId": "InteractiveGameManual",
       "SourceType": "Discovered",
-      "ContentRoot": "C:\\Users\\Dukef\\projects\\csci2\\InteractiveGameManual\\wwwroot\\",
+      "ContentRoot": "C:\\Users\\Dukes\\projects\\2024Projects\\InteractiveGameManual\\wwwroot\\",
       "BasePath": "_content/InteractiveGameManual",
       "RelativePath": "bootstrap/bootstrap.min.css",
       "AssetKind": "All",
@@ -93,10 +93,10 @@
       "OriginalItemSpec": "wwwroot\\bootstrap\\bootstrap.min.css"
     },
     {
-      "Identity": "C:\\Users\\Dukef\\projects\\csci2\\InteractiveGameManual\\wwwroot\\bootstrap\\bootstrap.min.css.map",
+      "Identity": "C:\\Users\\Dukes\\projects\\2024Projects\\InteractiveGameManual\\wwwroot\\bootstrap\\bootstrap.min.css.map",
       "SourceId": "InteractiveGameManual",
       "SourceType": "Discovered",
-      "ContentRoot": "C:\\Users\\Dukef\\projects\\csci2\\InteractiveGameManual\\wwwroot\\",
+      "ContentRoot": "C:\\Users\\Dukes\\projects\\2024Projects\\InteractiveGameManual\\wwwroot\\",
       "BasePath": "_content/InteractiveGameManual",
       "RelativePath": "bootstrap/bootstrap.min.css.map",
       "AssetKind": "All",
@@ -112,10 +112,10 @@
       "OriginalItemSpec": "wwwroot\\bootstrap\\bootstrap.min.css.map"
     },
     {
-      "Identity": "C:\\Users\\Dukef\\projects\\csci2\\InteractiveGameManual\\wwwroot\\favicon.png",
+      "Identity": "C:\\Users\\Dukes\\projects\\2024Projects\\InteractiveGameManual\\wwwroot\\favicon.png",
       "SourceId": "InteractiveGameManual",
       "SourceType": "Discovered",
-      "ContentRoot": "C:\\Users\\Dukef\\projects\\csci2\\InteractiveGameManual\\wwwroot\\",
+      "ContentRoot": "C:\\Users\\Dukes\\projects\\2024Projects\\InteractiveGameManual\\wwwroot\\",
       "BasePath": "_content/InteractiveGameManual",
       "RelativePath": "favicon.png",
       "AssetKind": "All",
@@ -131,10 +131,10 @@
       "OriginalItemSpec": "wwwroot\\favicon.png"
     },
     {
-      "Identity": "C:\\Users\\Dukef\\projects\\csci2\\InteractiveGameManual\\wwwroot\\Images\\MazeGame.png",
+      "Identity": "C:\\Users\\Dukes\\projects\\2024Projects\\InteractiveGameManual\\wwwroot\\Images\\MazeGame.png",
       "SourceId": "InteractiveGameManual",
       "SourceType": "Discovered",
-      "ContentRoot": "C:\\Users\\Dukef\\projects\\csci2\\InteractiveGameManual\\wwwroot\\",
+      "ContentRoot": "C:\\Users\\Dukes\\projects\\2024Projects\\InteractiveGameManual\\wwwroot\\",
       "BasePath": "_content/InteractiveGameManual",
       "RelativePath": "Images/MazeGame.png",
       "AssetKind": "All",

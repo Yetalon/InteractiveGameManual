@@ -24,7 +24,7 @@ namespace InteractiveGameManual.Services{
             AllCharacters.Add(new Character{
                 Health = Rnd.Next(6,11),
                 Power = Rnd.Next(2,6),
-                ImageURL = "https://raw.githubusercontent.com/Yetalon/Images/refs/heads/main/DALL%C2%B7E%202024-10-03%2009.30.00%20-%20A%20cartoony%20monster%20character%20for%20a%20maze%20game%2C%20designed%20in%20a%20playful%20and%20colorful%20style.%20The%20monster%20has%20a%20round%20body%20with%20exaggerated%20features%2C%20large%20.webp",
+                ImageURL = "https://raw.githubusercontent.com/Yetalon/Images/refs/heads/main/InteractiveGameManual/DALL%C2%B7E%202024-10-03%2009.30.00%20-%20A%20cartoony%20monster%20character%20for%20a%20maze%20game%2C%20designed%20in%20a%20playful%20and%20colorful%20style.%20The%20monster%20has%20a%20round%20body%20with%20exaggerated%20features%2C%20large%20.webp",
                 Name = "Monster",
                 Description = "The Monster is a dangerous beast that the player will encounter when trying to complete the Maze. The Monsters Health and Power are randomly generated, making each Monster unique and every battle unpredictable. A player may want to find a weapon before fighting a Monster."
             });
