@@ -18,7 +18,6 @@ namespace InteractiveGameManual.Services{
         /// tracks if player is posioned
         /// </summary>
         public bool IsPoisioned { get; set; }
-
         /// <summary>
         /// Creates a instance of <see cref="AllCharacters"/>
         /// Adds a Player to the AllCharacters 

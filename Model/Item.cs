@@ -1,6 +1,9 @@
 using Microsoft.Extensions.Diagnostics.HealthChecks;
 
 namespace InteractiveGameManual.Model{
+    /// <summary>
+    /// model of what a item holds
+    /// </summary>
     public class Item{
         /// <summary>
         /// Name of item

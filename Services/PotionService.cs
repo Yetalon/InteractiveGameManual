@@ -6,7 +6,6 @@ namespace InteractiveGameManual.Services{
     /// </summary>
     public class PotionService : ItemService
     {
-
         /// <summary>
         /// A list of all the potion types
         /// </summary>

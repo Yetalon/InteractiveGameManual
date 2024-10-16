@@ -66,21 +66,44 @@
             <button @onclick=DeleteNote>DeleteNote</button>
         </div>
     </div>
-    using System.Xml;
 </div>
 @code {
+    /// <summary>
+    /// the title of the note
+    /// </summary>
     string? title {get; set;}
+    /// <summary>
+    /// the text content of the note
+    /// </summary>
     string? text {get; set;}
+    /// <summary>
+    /// Title of note used for comparison for deletion of note
+    /// </summary>
     string? noteTitle {get; set;}
+    /// <summary>
+    /// Title of note picked to add a refrence to 
+    /// </summary>
     string? noteForRefrence {get; set;}
+    /// <summary>
+    /// The selected reference to add to the note
+    /// </summary>
     string? selectedRefrence {get; set;}
+    /// <summary>
+    /// Makes sure when the page starts it fills the AllRefrences array with all possible refrences shouldnt be more than 11
+    /// </summary>
     protected override void OnInitialized()
     {
         notes.InitalizeAllRefrences(player, monster, weapons, potions);
     }
+    /// <summary>
+    /// Creates a new note and sets the title to the chosen title and text to the chosen text and creates a empty refrences list
+    /// then it sets the title and text to null. if the title is null or empty then it sets the title to default title and continues.
+    /// then calls the CreateNote method and clears the title and text
+    /// </summary>
     private async Task MakeNote(){
         if(title == null || title == ""){
-            title = "default title";
+            title = $"default title{notes.EmptyTitle}";
+            notes.EmptyTitle += 1;
         }
         Note toAdd = new Note{
                 Title = title,
@@ -91,6 +114,11 @@
         title = "";
         text = "";
     }
+    /// <summary>
+    /// Checks if notes is null or 0 and does a quick return if so
+    /// Then it creates a new note called notetodelete and checks if the noteTitle is empty or null this happens if the note to be deleted is the first note in the list so it sets the note to the first note
+    /// Then it checks if the note is valid and if so it deletes the note and clears the note title
+    /// </summary>
     private async Task DeleteNote(){
         if (notes.AllNotes == null || notes.AllNotes.Count == 0){
             return;
@@ -110,6 +138,12 @@
         notes.DeleteNote(noteToDelete);
         noteTitle = "";
     }
+    /// <summary>
+    /// Checks if notes is 0 if so does a quick return
+    /// then checks if the note that is geting the refrence is empty or null same case as the delete not it sets it to the first note
+    /// then it checks if the selectedRefrence is empty or null and sets it to the first refrence which is player
+    /// then it checks if the titles match and if they do it adds the refrence
+    /// </summary>
     private async Task AddRefrence()
     {
         if(notes.AllNotes.Count == 0){

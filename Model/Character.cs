@@ -1,4 +1,7 @@
 namespace InteractiveGameManual.Model{
+    /// <summary>
+    /// model of what a character holds
+    /// </summary>
     public class Character{
         /// <summary>
         /// health of the character

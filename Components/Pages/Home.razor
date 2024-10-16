@@ -39,12 +39,24 @@
 </div>
 
 @code {
+    /// <summary>
+    /// bool used to track if the how to win button is pressed
+    /// </summary>
     public bool textWin = false;
+    /// <summary>
+    /// bool used to track if the controls button is pressed
+    /// <summary>
     public bool textControls = false;
+    /// <summary>
+    /// changes textwin to true if how to win button is pressed 
+    /// </summary>
     private void DisplayTextWin()
     {
         textWin = true;
     }
+    /// <summary>
+    /// changes textControls to true if controls button is pressed
+    /// </summary>
     private void DisplayTextControls()
     {
         textControls = true;

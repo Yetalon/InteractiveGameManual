@@ -26,6 +26,7 @@
             <p>@character?.Description</p>
             <img class="img-fluid img-thumbnail w-50 h-auto bg-white" src="@character?.ImageURL">
         </div>
+        <a href="/character">go back</a>
     </div>
 }
 else{
@@ -59,13 +60,29 @@ else{
             }
         }
     </div>
+    <a href="/items">go back</a>
 </div>
 }
 @code {
+    /// <summary>
+    /// The parameter for the details page
+    /// </summary>
     [Parameter]
     public string? Name{get; set;}
+    /// <summary>
+    /// instance of character to determine whether to display the details of a monster or player
+    /// </summary>
     Character? character{get; set;}
+    /// <summary>
+    /// instance of item used to display a items stats 
+    /// </summary>
     public Item? item;
+    /// <summary>
+    /// instance of weapon used to display the stats of the weapon
+    /// </summary>
     public Weapon? weapon;
+    /// <summary>
+    /// istance of potion used to display the stats of the potion
+    /// </summary>
     public Potion? potion;
 }

@@ -1,4 +1,7 @@
 namespace InteractiveGameManual.Model{
+    /// <summary>
+    /// inherits from item and adds effectdescription and effectamount for potions
+    /// </summary>
     public class Potion : Item{
         /// <summary>
         /// the description of the potion

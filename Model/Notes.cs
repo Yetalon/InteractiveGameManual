@@ -1,4 +1,7 @@
 namespace InteractiveGameManual.Model{
+    /// <summary>
+    /// model of what a note holds
+    /// </summary>
     public class Note{
         /// <summary>
         /// The title of a note

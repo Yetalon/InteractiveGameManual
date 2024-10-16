@@ -1,5 +1,9 @@
 using InteractiveGameManual.Model;
 namespace InteractiveGameManual.Services{
+    /// <summary>
+    /// Holds all the notes created and manages them with CreateNote and DeleteNote methods
+    /// Also holds all possible refrences
+    /// </summary>
     public class NoteService{
         /// <summary>
         /// Holds all the notes created
@@ -9,12 +13,14 @@ namespace InteractiveGameManual.Services{
         /// used to hold all possible refrences to be made
         /// </summary>
         public List<string> AllRefrences {get; set;}
+        public int EmptyTitle {get; set;}
         /// <summary>
-        /// Creates a instance of <see cref="AllNotes"/> and a instance of <see cref="AllRefrences"/>
+        /// Creates a instance of <see cref="AllNotes"/> and a instance of <see cref="AllRefrences"/> and sets the amount of empty titles to 0
         /// </summary>
         public NoteService(){
             AllNotes = new();
             AllRefrences = new();
+            EmptyTitle = 0;
         }
         /// <summary>
         /// adds a note to the allnotes list

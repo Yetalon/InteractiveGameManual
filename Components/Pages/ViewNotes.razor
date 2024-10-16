@@ -65,21 +65,48 @@
 </div>
 
 @code {
+    /// <summary>
+    /// The parameter for any note being viewed
+    /// </summary>
     [Parameter]
     public string? noteName {get; set;}
-
+    /// <summary>
+    /// The note being viewed
+    /// </summary>
     Note? Note {get; set;}
+    /// <summary>
+    /// title to be changed for the note
+    /// </summary>
     public string? title {get; set;}
+    /// <summary>
+    /// Text to be changed for the note
+    /// </summary>
     public string? text {get; set;}
+    /// <summary>
+    /// used to hide the editNote button
+    /// </summary>
     bool editNote = false;
+    /// <summary>
+    /// Selected refrence to delete
+    /// </summary>
     public string? selectedReference {get; set;}
+    /// <summary>
+    /// Changes <see cref="editNote"> to true when edit note button is pressed
+    /// </summary>
     public void EditNote(){
         editNote = true;
     }
+    /// <summary>
+    /// Saves the changes made to the note
+    /// Checks the title if its null or empty sets the note title to its original title
+    /// Then changes teh note and clears the title and text and sets editnote to false
+    /// </summary>
     public async Task SaveChanges(){
         if (title != "" && title != null){
             Note.Title = title;
-            Note.Text = text;
+            if (text != "" && text != null){
+                Note.Text = text;
+            }
         }
         else{
             title = Note?.Title;
@@ -91,6 +118,11 @@
         text = "";
         editNote = false;
     }
+    /// <summary>
+    /// Deletes the selected refrence to delete
+    /// Checks if the refrence is not null or empty and the list is above 0 if so deletes the refrence
+    /// if its null or empty and above 0 sets to refrences list at 0 and deletes it and then clears selectedRefrence 
+    /// </summary>
     public async Task DeleteRefrence(){
         string referenceToDelete = selectedReference;
         if (referenceToDelete != null && referenceToDelete != ""){
